@@ -28,7 +28,7 @@ import type { AppRouter } from './api/trpc/[trpc]';
 export const trpc = createTRPCNext<AppRouter>({
   ssr: true,
   ssrPrepass,
-  config(config) {
+  config(opts) {
     const { ctx } = opts;
     if (typeof window !== 'undefined') {
       // during client requests
